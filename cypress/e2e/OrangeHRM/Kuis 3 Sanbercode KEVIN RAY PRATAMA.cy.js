@@ -3,7 +3,9 @@ describe ('Scenario Login', () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.get('[name="username"]').type('Admin').should('have.value', 'Admin')
         cy.get('[name="password"]').type('admin123').should('have.value', 'admin123')
+        cy.get('.oxd-button').should('be.visible')
         cy.get('.oxd-button').click().should('be.visible')
+        cy.url().should('include', 'dashboard')
     })
 })
 
