@@ -2,8 +2,8 @@ describe ('Scenario Login', () => {
     it ('TC001-Login dengan Credential Valid',() => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.get('[name="username"]').type('Admin')
-        cy.get('[name="password"]').type('admin123').should('have.value', 'admin123').should('be.visible')
-        cy.get('.oxd-button').click()
+        cy.get('[name="password"]').type('admin123').should('have.value', 'admin123')
+        cy.get('.oxd-button').click().should('be.visible')
     })
 })
 
