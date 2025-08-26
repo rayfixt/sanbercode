@@ -26,7 +26,23 @@ describe ('Scenario Login', () => {
 })
 
 describe ('Scenario Login', () => {
-    it ('TC004-Forgot Password',() => {
+    it ('TC004-Login dengan Mengosongkan Username',() => {
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        cy.get('[name="password"]').type('admin123')
+        cy.get('.oxd-button').click()
+    })
+})
+
+describe ('Scenario Login', () => {
+    it ('TC005-Login dengan Mengosongkan Password',() => {
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        cy.get('[name="username"]').type('Admin')
+        cy.get('.oxd-button').click()
+    })
+})
+
+describe ('Scenario Login', () => {
+    it ('TC006-Forgot Password',() => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.get('.orangehrm-login-forgot > .oxd-text').click()
         cy.get('[name="username"]').type('Admin')
@@ -35,7 +51,7 @@ describe ('Scenario Login', () => {
 })
 
 describe ('Scenario Login', () => {
-    it ('TC005-Help/ FAQ',() => {
+    it ('TC007-Help/ FAQ',() => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.get('[name="username"]').type('Admin')
         cy.get('[name="password"]').type('admin123')
@@ -45,7 +61,7 @@ describe ('Scenario Login', () => {
 })
 
 describe ('Scenario Login', () => {
-    it ('TC006-Support',() => {
+    it ('TC008-Support',() => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.get('[name="username"]').type('Admin')
         cy.get('[name="password"]').type('admin123')
@@ -56,7 +72,7 @@ describe ('Scenario Login', () => {
 })
 
 describe ('Scenario Login', () => {
-    it ('TC007-Ubah Password',() => {
+    it ('TC009-Ubah Password',() => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.get('[name="username"]').type('Admin')
         cy.get('[name="password"]').type('admin123')
@@ -68,4 +84,4 @@ describe ('Scenario Login', () => {
         cy.get('.user-password-row > .oxd-grid-2 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin12345')
         cy.get('.oxd-button--secondary').click()
     })
-})  
+})

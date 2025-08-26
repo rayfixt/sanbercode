@@ -36,7 +36,7 @@ describe ('Scenario Login', () => {
 describe ('Scenario Login', () => {
     it ('TC004-Login dengan mengosongkan password',() => {
         cy.visit('https://www.saucedemo.com/v1/index.html')
-        cy.get('[data-test="username"]').type('standard_user')
+        cy.get('#user-name').type('standard_user')
         cy.get('#login-button').click()
     })
 })
